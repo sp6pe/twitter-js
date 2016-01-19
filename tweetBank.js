@@ -1,6 +1,26 @@
 var _ = require('lodash');
 
-var data = [];
+var data = [ { name: 'Dave Docsreader',
+    text: 'Fullstack Academy is amazing! The instructors are just so sweet. #fullstacklove #codedreams' },
+  { name: 'Ayana McQueue',
+    text: 'Fullstack Academy is breathtaking! The instructors are just so wonderful. #fullstacklove #codedreams' },
+  { name: 'Charlotte Ecma',
+    text: 'Fullstack Academy is amazing! The instructors are just so wonderful. #fullstacklove #codedreams' },
+  { name: 'Dave Binder',
+    text: 'Fullstack Academy is wonderful! The instructors are just so sweet. #fullstacklove #codedreams' },
+  { name: 'Charlotte Hashington',
+    text: 'Fullstack Academy is amazing! The instructors are just so funny. #fullstacklove #codedreams' },
+  { name: 'Dave Docsreader',
+    text: 'Fullstack Academy is awesome! The instructors are just so wonderful. #fullstacklove #codedreams' },
+  { name: 'Charlotte Ecma',
+    text: 'Fullstack Academy is wonderful! The instructors are just so amazing. #fullstacklove #codedreams' },
+  { name: 'Nimit OLogn',
+    text: 'Fullstack Academy is breathtaking! The instructors are just so breathtaking. #fullstacklove #codedreams' },
+  { name: 'Charlotte Ecma',
+    text: 'Fullstack Academy is wonderful! The instructors are just so mindblowing. #fullstacklove #codedreams' },
+  { name: 'Shanna Binder',
+    text: 'Fullstack Academy is awesome! The instructors are just so breathtaking. #fullstacklove #codedreams' },
+  ]
 
 function add (name, text) {
     data.push({name: name, text: text});
@@ -36,3 +56,7 @@ var getFakeTweet = function() {
 for(var i=0; i<10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
+
+
+
+
