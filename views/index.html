@@ -15,7 +15,7 @@
     
       <!-- display tweets here TWEET LINKS NEED TO BE FIXED TO DYNAMIC REFERENCES-->
       {% for tweet in tweets %}
-        <li><a href="./user/{{tweet.name}}">{{tweet.name}}</a><a href='./tweets/{{tweet.id}}'> - {{tweet.text}}</a></li>
+        <li class="tweetbox"><a href="./user/{{tweet.name}}">{{tweet.name}}</a><a href='./tweets/{{tweet.id}}'> - {{tweet.text}}</a></li>
       {% endfor %}
       
     </div>
