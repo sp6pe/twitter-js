@@ -1,8 +1,9 @@
 var express = require( 'express' );
 var app = express(); // creates an instance of an express application
 var swig = require('swig');
-var routes = require('./routes/')
+var routes = require('./routes/');
 var path = require('path');
+
 
 app.engine('html',swig.renderFile);
 app.set('view engine', 'html');

@@ -3,7 +3,7 @@
 {% block content %}
   
   <div class="page-header">
-    <h1>Welcome to Twitter.js!</h1>
+    <h1>{{title}}</h1>
   </div>
   <div class="row">
     <div class="col-md-3">
@@ -13,14 +13,26 @@
     </div>
     <div class="col-md-9">
     
-      <!-- display tweets here -->
+      <!-- display tweets here TWEET LINKS NEED TO BE FIXED TO DYNAMIC REFERENCES-->
       {% for tweet in tweets %}
-        <li>{{tweet.name}}</li>
-        <li>{{tweet.text}}</li>
-
+        <li><a href="./user/{{tweet.name}}">{{tweet.name}}</a><a href='./tweets/{{tweet.id}}'> - {{tweet.text}}</a></li>
       {% endfor %}
       
     </div>
+      {% if showForm %}
+    <form action="/tweets" method="POST">
+      <label for="name_field">Name:</label>
+      <input name="name" value="{{preName}}" type="text" id="name_field" />
+
+      <label for="text_field">Text:</label>
+      <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+      <input type="submit" value="Submit" />
+    </form>
+  {% endif %}
+
   </div>
     
 {% endblock %}
+
+
