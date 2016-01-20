@@ -1,13 +1,15 @@
 
+
+
 var express = require('express');
 var router = express.Router();
 var tweetBank = require("../tweetBank");
 var bodyParser = require('body-parser');
 
-
+module.exports = function (io) {
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
-
+//router.use(express.static('public'));
 
 router.get('/', function(req,res){
     var tweets = tweetBank.list();
@@ -31,8 +33,11 @@ router.post('/tweets', function(req, res) {
     var name = req.body.name;
     var text = req.body.text;
     tweetBank.add(name, text);
-    res.redirect('/');
+    io.sockets.emit('new_tweet', {name: name, text:text });
+    
+    //res.redirect('/');
 });
+
 
 
 
@@ -40,10 +45,10 @@ router.post('/tweets', function(req, res) {
 //     res.sendfile('./public/stylesheets/style.css');
 // });
 
-router.use(express.static('public'));
+return router;
 
 
-
+}
 
 // app.use(function (req, res, next) {
 //     // do your logging here
@@ -68,4 +73,8 @@ router.use(express.static('public'));
 
 
 
-module.exports = router;
+
+
+
+
+
